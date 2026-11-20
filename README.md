@@ -95,13 +95,11 @@ ACC-A also held 5 ALFA 50 calls expiring today, with ALFA closing at 62. They we
 - Tolerances (0.005 on price, 0.01 on fees, 5.00 per cash bucket) are illustrative.
 - The cash statement shows the contractual settlement amounts for today's trades. In reality EU cash equities settle on T+2, so these amounts would only hit the account two days later.
 - Futures only affect cash through fees. In reality futures cash moves through daily variation margin, which I do not model.
-- Expiry: an option is treated as exercised if it is in the money at the close price. There is no exercise threshold or contrary instruction, and nobody trades an option on its expiry day.
+- Expiry: an option is treated as exercised if it is in the money at the close price. There is no exercise threshold or contrary instruction, and the generator does not trade options on their expiry day.
 - The split is a simple 2-for-1 with no cash in lieu.
 - The generator puts each injected break on its own account and instrument, so causes do not overlap. Real breaks often do overlap.
 - The total difference per currency in the summary counts one root cause more than once, because a single missing trade breaks trades, positions and cash.
 
-## What I learned
+## How this was built
 
-- TODO
-- TODO
-- TODO
+The specification and the code were written with AI assistants. I chose the scope (the break types, the matching rules, the roll-forward and the tests), reviewed and ran the code, and can explain every part.
